@@ -1,0 +1,67 @@
+\chapter{Frequently asked questions\label{chap:faq}}
+
+In addition to the information provided in
+chapter~\ref{chap:introduction}, here are some brief notes on
+references (see section~\ref{sec:references}) and figures (see
+section~\ref{sec:figures}).
+
+\section{References\label{sec:references}}
+
+You can, of course, use any referencing style you like such as
+\verb+plain+.  The \verb+natbib+ package, however, allows you to do
+this with named style citations:
+
+\begin{tabbing}
+\hspace{3in} \= \kill
+\verb-\citet{key}- \> Jones et al. (1990) \\
+\verb-\citet*{key}- \> Jones, Baker, and Smith (1990) \\
+\verb-\citep{key}- \> (Jones et al., 1990) \\
+\verb-\citep*{key}- \> (Jones, Baker, and Smith, 1990) \\
+\verb-\citep[chap. 2]{key}- \> (Jones et al., 1990, chap. 2) \\
+\verb-\citep[e.g.][]{key}- \> (e.g. Jones et al., 1990) \\
+\verb-\citep[e.g.][p. 32]{key}- \> (e.g. Jones et al., p. 32) \\
+\verb-\citeauthor{key}- \> Jones et al. \\
+\verb-\citeauthor*{key}- \> Jones, Baker, and Smith \\
+\verb-\citeyear{key}- \> 1990 \\
+\end{tabbing}
+
+This template uses BibTeX as the citation engine, and you should learn to fill in citations correctly, perhaps even use a bibfile manager like \href{https://www.jabref.org}{JabRef}. 
+Recall that when citing a book, you should always include the chapter, for example, the first chapter of the classic AI book~\cite[Ch. 1]{RussellNorvig2022}. 
+Papers are easier to cite, such as a recent AAAI paper~\cite{Amado2022}. 
+
+\section{Figures\label{sec:figures}}
+
+To include an encapsulated postscript or PDF file (depending on whether you're using \LaTeX or PDF\LaTeX) as a figure, do
+something like the following.  Note, to ensure correct
+cross-referencing, it is best to include the figure label within
+the caption definition.  \emph{Note that the graphicx package 
+is already loaded and used to include the
+University crest on the title page.}
+
+\begin{verbatim}
+\begin{figure}
+ \begin{center}
+   \includegraphics{myfigure.pdf}    
+   \caption{This is my figure.\label{fig:mylabel}}
+ \end{center}
+\end{figure}
+\end{verbatim}
+
+\section{Frequently used symbols\label{sec:fus}}
+
+In \LaTeX\ documents where you want to use a modality or some text consistently in normal text and in equation environments it is often difficult to remember to typeset the text consistently or time-consuming to keep typing in the environment. It may be a good idea to define something like the following in the preamble (i.e.\ before \verb+\begin{document}+):
+
+\begin{verbatim}
+\def\sfthing#1#2{\def#1{\mbox{{\small\normalfont\sffamily #2}}}}
+
+\sfthing{\PP}{P}
+\sfthing{\FF}{F}
+\end{verbatim}
+
+Then use it in text or math mode. In all cases it looks the same; e.g.\\
+\verb+\PP\ refers to something, and other things are \FF; $\Phi = \PP\cup\FF$+\\
+is typeset as:
+
+\PP\ refers to something, and other things are \FF; i.e.\ $\Phi = \PP\cup\FF$
+
+Note that you need to put ``\textbackslash'' after the command if you want a normal space after it.

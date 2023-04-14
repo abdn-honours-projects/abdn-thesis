@@ -1,0 +1,79 @@
+\chapter{Introduction\label{chap:introduction}}
+
+Each chapter heading is typeset in this way --- this in an integral
+part of the style, so if you don't like it abdnthesis.cls may not be
+for you. However, do feel free to modify the .cls file to your needs.
+
+\section{Defaults}
+
+\begin{itemize}
+\item oneside --- assuming single sided printing.
+
+\item onecolumn --- \LaTeX\ will give you an error if you try to use
+  the twocolumn option, not that anyone would contemplate this for a
+  thesis.
+
+\item 11pt --- this works best with the text height and width on A4
+  paper.
+
+\item 1.5 line spacing --- looks much better than double spacing.
+
+\item Times Roman font --- for both text and maths with the exception
+  of mathcal, but see below for options.
+\end{itemize}
+
+\section{Options}
+
+\begin{itemize}
+
+\item These are mutually exclusive options that are used to specify
+ the type of degree that the thesis is to be submitted in partial
+ fulfilment of the requirements of:
+
+\begin{itemize}
+\item phd or PhD -- the default.
+\item mphil or MPhil -- for Master of Philosophy Theses.
+\item msc or MSc -- for MSc project reports.
+\item bsc or BSc -- for BSc project reports.
+\end{itemize}
+
+\item Two self-explanatory options for changing the line spacing from
+ the default 1.5.
+
+\begin{itemize}
+\item singlespace
+\item doublespace
+\end{itemize}
+
+\item titlebox --- this option ensures that the title of the document
+ fits within the window on the standard departmental BSc or MSc
+ project report front cover.
+ 
+\item twoside --- this option is if you wish to print your thesis
+  using a double sided printer.  Note that the University regulations 
+  do not permit the submission of theses printed double sided.
+
+\item cmmath --- this action changes the font used in math mode to be
+  Computer Modern. The default is for all math mode fonts to be times
+  with the exception of the mathcal font. If you want to also use
+  times for mathcal, you need to comment out these two lines in the
+  abdnthesis.cls file:
+\begin{verbatim}
+        \SetMathAlphabet{\mathcal}{normal}{OMS}{cmsy}{m}{n}
+        \SetMathAlphabet{\mathcal}{bold}{OMS}{cmsy}{b}{n}
+\end{verbatim}
+
+\item cmall --- if you want to go with Computer Modern for both
+  text and maths, use this option.
+\end{itemize}
+
+There is also an \emph{optional} command for including prior
+qualifications within the title page; some like to do this. Prior to
+version 2.3 (2013/08/11) \LaTeX\ would give an error if this was not
+declared, even if you didn't want this information on the title
+page. This meant that you would have to have made the declaration
+\verb+\qualifications{}+, which was an ugly solution. Now, ``empty''
+declaration can simply be omitted.
+
+
+

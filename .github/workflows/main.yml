@@ -17,7 +17,6 @@ jobs:
           - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
           - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
           - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-          - run: 
           - name: Check out repository code
             uses: actions/checkout@v3
           - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
@@ -30,5 +29,5 @@ jobs:
           - name: LaTeX compile
             working-directory: ${{ env.DIR }}
             run: latexmk -pdf -bibtex ${{ env.FILE }}
-            # run: pdflatex ${{ env.FILE }}; bibtex ${{ env.FILE }}; pdflatex ${{ env.FILE }}; pdflatex ${{ env.FILE }};
+            #run: pdflatex ${{ env.FILE }}; bibtex ${{ env.FILE }}; pdflatex ${{ env.FILE }}; pdflatex ${{ env.FILE }};
           - run: echo "🍏 This job's status is ${{ job.status }}."

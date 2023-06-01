@@ -30,4 +30,7 @@ jobs:
             working-directory: ${{ env.DIR }}
             run: latexmk -pdf -bibtex ${{ env.FILE }}
             #run: pdflatex ${{ env.FILE }}; bibtex ${{ env.FILE }}; pdflatex ${{ env.FILE }}; pdflatex ${{ env.FILE }};
+          - name: Check Compilation Output
+            working-directory: ${{ env.DIR }}
+            run: cat ${{ env.FILE }}.log
           - run: echo "🍏 This job's status is ${{ job.status }}."
